@@ -11,6 +11,5 @@ export default function getPoints () {
             const points = prop('body', payload);
 
             return dispatch(setPoints(points));
-        })
-        .catch(err => console.log(err))
+        });
 }

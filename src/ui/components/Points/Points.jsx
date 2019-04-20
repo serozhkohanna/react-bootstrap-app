@@ -19,14 +19,15 @@ const mapDispatchToProps = (dispatch) => ({
 
 class Points extends Component {
     static propTypes = {
-        points: PropTypes.array
+        points: PropTypes.array,
+        getPoints: PropTypes.func.isRequired
     };
 
     static defaultProps = {
         points: []
     };
 
-    componentDidMount() {
+    componentDidMount () {
         this.props.getPoints();
     }
 
