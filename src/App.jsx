@@ -7,7 +7,7 @@ import './css/main.css';
 
 import MainPage from './ui/pages/MainPage/MainPage.jsx';
 
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 
 @media
 class App extends Component {
@@ -20,4 +20,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default withRouter(App);
