@@ -1,12 +1,11 @@
 'use strict';
 
 import express from 'express';
-import ControllerClass from './controller';
+import { getPoints } from './service';
 
-const controller = new ControllerClass();
 const router = express.Router();
 
 router.route('/get-points')
-    .get(controller.getPoints.bind(controller));
+    .get(getPoints);
 
 export default router;
