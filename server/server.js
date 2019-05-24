@@ -17,7 +17,6 @@ import renderPage from '../index';
 import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router-dom';
 import Helmet from 'react-helmet';
-import App from '../src/App.jsx';
 
 const rootPath = path.resolve(__dirname, '..');
 const PORT = process.env.PORT || 3000;
@@ -50,14 +49,7 @@ app.get('*', function (req, res) {
         .then(() => {
             const context = {};
             const html = renderToString(
-                <Provider store={store}>
-                    <StaticRouter
-                        location={req.originalUrl}
-                        context={context}
-                    >
-                        <App />
-                    </StaticRouter>
-                </Provider>
+                <div />
             );
             const helmet = Helmet.renderStatic();
             const preloadedState = store.getState();
