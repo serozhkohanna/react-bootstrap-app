@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 
-import getPoints from '../../../services/getPoints';
+import setPoints from '../../../actions/setPoints';
 
 import styles from './Points.css';
 
@@ -14,29 +14,38 @@ const mapStateToProps = ({ application }) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    getPoints: () => dispatch(getPoints())
+    setPoints: (payload) => dispatch(setPoints(payload))
 });
 
 class Points extends Component {
     static propTypes = {
         points: PropTypes.array,
-        getPoints: PropTypes.func.isRequired
+        setPoints: PropTypes.func.isRequired
     };
 
     static defaultProps = {
         points: []
     };
 
-    componentDidMount () {
-        this.props.getPoints();
-    }
+    handleLikeClick = i => () => {
+        const { points } = this.props;
+        const newPoints = [...points];
+
+        newPoints[i].likes = newPoints[i].likes + 1
+
+        this.props.setPoints(newPoints);
+    };
 
     render () {
         const { points } = this.props;
 
         return <section className={styles.container}>
             <ul>
-                { points.map((point, i) => <li className={styles.point} key={i}>{point}</li>) }
+                { points.map((point, i) => {
+                    return <li className={styles.point} key={i}>
+                        Лайки: {point.likes} <button onClick={this.handleLikeClick(i)}>Добавить лайк</button>
+                    </li>;
+                }) }
             </ul>
         </section>;
     }

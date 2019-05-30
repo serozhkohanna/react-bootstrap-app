@@ -8,7 +8,11 @@ const initialState = {
         width: 0,
         height: 0
     },
-    points: []
+    points: [
+        { likes: 12 },
+        { likes: 13 },
+        { likes: 14 }
+    ]
 };
 
 export default function (state = initialState, action) {
