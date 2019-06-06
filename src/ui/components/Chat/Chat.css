@@ -1,0 +1,30 @@
+.chat{
+  padding: 30px;
+  display: flex;
+  flex-flow: row wrap;
+  border: 1px solid black;
+  width: 30%;
+  margin: 30px auto;
+}
+.chat ul{
+  width: 100%;
+  margin-bottom: 10px;
+}
+.chat li { padding:  5px 10px }
+.chat .left{
+  background-color: pink;
+  text-align: right;
+  border-radius: 40px;
+}
+.chat input{
+  flex-grow: 4; border-radius: 20px;border: 1px solid black;
+}
+.chat button{
+  flex-grow: 1;
+  margin: 0px 10px;
+  border-radius: 20px;
+  border:none;
+  outline: none;
+  cursor: pointer;
+  background-color: black;color: white;
+}

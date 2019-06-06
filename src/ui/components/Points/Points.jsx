@@ -36,8 +36,8 @@ class Points extends Component {
 
         return <section className={styles.container}>
             <ul>
-                { points.map((point, i) => <li className={styles.point} key={i}>{point}</li>) }
-            </ul>
+               { /* points.map((point, i) => <li className={styles.point} key={i}>{point}</li>) */ }
+             </ul>
         </section>;
     }
 }

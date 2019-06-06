@@ -8,7 +8,7 @@ const initialState = {
         width: 0,
         height: 0
     },
-    points: []
+    points: [],
 };
 
 export default function (state = initialState, action) {
